@@ -1,0 +1,17 @@
+
+
+<div class="card">
+    <img class="card-img-top" src="https://picsum.photos/id/{{ id }}/300/300" alt="">
+    <div class="card-body">
+        <h4 class="card-title">{{ title | titlecase }}</h4>
+        <p class="card-text">
+            {{ content }}
+             <br>
+             <a href="">{{ user.username }}</a>
+             <br>
+             <a href="">{{ category.libelle }}</a>
+             <br>
+            <em>Updated {{ updatedAt | date:'dd/MM/yyyy' }}</em>
+        </p>
+    </div>
+</div>
