@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsCategoryComponent implements OnInit {
 
-  articles: Article[] = [];
+  category: any[] = [];
   loading: boolean = false;
 
   constructor(
@@ -23,8 +23,8 @@ export class DetailsCategoryComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.loading = true;
       this.categoryService.getArticlesFromCategory(params.idCategory)
-          .subscribe((res: Article[]) => {
-            this.articles = res['data'];
+          .subscribe((res: any[]) => {
+            this.category = res['data'];
             this.loading = false;
           })
     })
