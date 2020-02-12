@@ -1,1 +1,15 @@
-<p>show works!</p>
+
+  <ol class="breadcrumb my-4">
+    <li class="breadcrumb-item "><a routerLink="/article">Home</a></li>
+    <li class="breadcrumb-item active"><a routerLink="#">{{ article.titre }}</a></li>
+  </ol>
+
+    <app-article 
+    genre="single"
+        [id]="article.code" 
+        [category]="article.category"
+        [title]="article.titre" 
+        [content]="article.contenu" 
+        [user]="article.user"
+        [updated-at]="article.date_modification">
+    </app-article>

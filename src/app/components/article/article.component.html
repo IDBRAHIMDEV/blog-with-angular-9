@@ -12,6 +12,13 @@
              <a href="">{{ category.libelle }}</a>
              <br>
             <em>Updated {{ updatedAt | date:'dd/MM/yyyy' }}</em>
+
         </p>
+            <div *ngIf="genre == 'list'" class="text-right">
+
+                <a [routerLink]="['/article', id]" class="btn btn-primary btn-lg">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
     </div>
 </div>

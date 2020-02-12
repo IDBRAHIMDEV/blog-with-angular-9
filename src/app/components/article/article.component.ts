@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ArticleComponent implements OnInit {
 
   @Input('id') id = 0;
+  @Input('genre') genre = "";
   @Input('title') title = "";
   @Input('content') content = "";
   @Input('updated-at') updatedAt = null;

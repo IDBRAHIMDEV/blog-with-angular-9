@@ -6,10 +6,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ArticleService {
 
+  urlApi = "http://localhost:8000/api/article";
+  
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get('http://localhost:8000/api/article');
+    return this.http.get(this.urlApi);
+  }
+
+
+  find(id: number) {
+    return this.http.get(`${this.urlApi}/${id}`);
   }
 
 }
