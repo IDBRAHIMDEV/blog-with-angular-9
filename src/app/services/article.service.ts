@@ -19,4 +19,8 @@ export class ArticleService {
     return this.http.get(`${this.urlApi}/${id}`);
   }
 
+  add(data) {
+    return this.http.post(this.urlApi, data);
+  }
+
 }

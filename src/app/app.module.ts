@@ -13,6 +13,9 @@ import { ListArticleComponent } from './components/list-article/list-article.com
 import { ArticleComponent } from './components/article/article.component';
 import { ListCategoryComponent } from './components/list-category/list-category.component';
 import { DetailsCategoryComponent } from './components/details-category/details-category.component';
+import { AddArticleComponent } from './components/add-article/add-article.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,12 +27,14 @@ import { DetailsCategoryComponent } from './components/details-category/details-
     ListArticleComponent,
     ArticleComponent,
     ListCategoryComponent,
-    DetailsCategoryComponent
+    DetailsCategoryComponent,
+    AddArticleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
