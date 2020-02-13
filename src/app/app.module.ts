@@ -16,6 +16,8 @@ import { DetailsCategoryComponent } from './components/details-category/details-
 import { AddArticleComponent } from './components/add-article/add-article.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ArticleComponent,
     ListCategoryComponent,
     DetailsCategoryComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

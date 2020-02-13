@@ -57,8 +57,15 @@
         </div>
        
 
-        <button [disabled]="articleForm.invalid" class="btn btn-primary btn-block">
-            <i class="fa fa-send"></i>Add new article
+        <button [disabled]="articleForm.invalid || loading" class="btn btn-primary btn-block">
+            
+            <span *ngIf="!loading">
+                <i class="fa fa-send"></i>Add new article
+            </span> 
+
+            <span  *ngIf="loading">
+                <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Loading...
+            </span>
         </button>
       </form>
     </div>

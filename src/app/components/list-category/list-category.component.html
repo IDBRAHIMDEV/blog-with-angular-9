@@ -4,7 +4,7 @@
 <ul class="list-group">
     
     <li *ngFor="let category of categories" class="list-group-item">
-       <a [routerLink]="['/category', category.id, 'articles']">{{ category.label }}</a> 
+       <a [routerLink]="['/article/category', category.id]">{{ category.label }}</a> 
     </li>
    
 </ul>
