@@ -42,8 +42,7 @@ export class AddArticleComponent implements OnInit {
     this.loading = true;
 
     let data = {
-      ...this.articleForm.value,
-      user_id: 1
+      ...this.articleForm.value
     }
 
     this.articleService.add(data)

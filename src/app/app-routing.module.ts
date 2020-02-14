@@ -1,3 +1,4 @@
+import { BeforeAuthGuard } from './guards/before-auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AddArticleComponent } from './components/add-article/add-article.component';
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: "article", component: HomeComponent, children: [
 
     { path: "", component: ListArticleComponent },
-    { path: "create", component: AddArticleComponent },
+    { path: "create", component: AddArticleComponent, canActivate: [BeforeAuthGuard] },
     { path: ":id", component: ShowComponent },
     { path: "category/:idCategory", component: DetailsCategoryComponent },
 
