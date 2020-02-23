@@ -1,3 +1,4 @@
+import { InterceptorService } from './sevices/interceptor.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ShowComponent } from './components/show/show.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ListArticleComponent } from './components/list-article/list-article.component';
 import { ArticleComponent } from './components/article/article.component';
 import { ListCategoryComponent } from './components/list-category/list-category.component';
@@ -16,6 +17,8 @@ import { DetailsCategoryComponent } from './components/details-category/details-
 import { AddArticleComponent } from './components/add-article/add-article.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ArticleComponent,
     ListCategoryComponent,
     DetailsCategoryComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
